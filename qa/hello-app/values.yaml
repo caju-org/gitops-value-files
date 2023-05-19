@@ -1,0 +1,32 @@
+---
+replicaCount: 10
+image:
+  repository: "gcr.io/google-samples/hello-app"
+  tag: "2.0"
+service:
+  port: 8080
+ingress:
+  enabled: true
+  className: nginx
+  defaultBackend:
+    enabled: true
+    service:
+      name: defaultbackend
+      port: 80
+  hosts:
+    - host: hello-app.caju.local
+      paths:
+        - path: /auth/admin/
+          pathType: Prefix
+          backend:
+            service:
+              name: defaultbackend
+              port:
+                number: 80
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: hello-app
+              port:
+                number: 8080
