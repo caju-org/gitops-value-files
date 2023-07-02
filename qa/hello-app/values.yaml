@@ -16,13 +16,13 @@ ingress:
   hosts:
     - host: hello-app.caju.local
       paths:
-        - path: /auth/admin/
-          pathType: Prefix
-          backend:
-            service:
-              name: defaultbackend
-              port:
-                number: 80
+        #- path: /auth/admin/
+          #pathType: Prefix
+          #backend:
+            #service:
+              #name: defaultbackend
+              #port:
+                #number: 80
         - path: /
           pathType: Prefix
           backend:
