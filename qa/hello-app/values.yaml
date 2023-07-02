@@ -8,8 +8,8 @@ service:
 ingress:
   enabled: true
   className: nginx
-  #defaultBackend:
-#  enabled: true
+  defaultBackend:
+    enabled: false
 #    service:
 #      name: defaultbackend
 #      port: 80
