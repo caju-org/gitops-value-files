@@ -8,11 +8,11 @@ service:
 ingress:
   enabled: true
   className: nginx
-  defaultBackend:
-    enabled: true
-    service:
-      name: defaultbackend
-      port: 80
+  #defaultBackend:
+#  enabled: true
+#    service:
+#      name: defaultbackend
+#      port: 80
   hosts:
     - host: hello-app.caju.local
       paths:
@@ -27,6 +27,6 @@ ingress:
           pathType: Prefix
           backend:
             service:
-              name: hello-app
+              name: hello
               port:
                 number: 8080
